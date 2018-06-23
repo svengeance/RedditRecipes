@@ -1,0 +1,22 @@
+{
+
+    "manifest_version": 2,
+    "name": "RedditRecipes",
+    "version": "0.1",
+  
+    "description": "Adds the ability to save and catalog recipes from Reddit",
+  
+    "icons": {
+      "48": "icons/48x48.png"
+    },
+    "permissions": [
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://*.reddit.com/r/ketorecipes*"],
+        "js": ["recipes.js"]
+      }
+    ]
+  
+  }
