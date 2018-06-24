@@ -43,10 +43,10 @@ function saveRecipe(title, imageUrl, comment, type, commentsUrl) {
     browser.storage.local.set(saveData);
 }
 
-browser.storage.local.get().then(function(item) {
-    for (var recipe in item) {
-        console.log(item[recipe].title);
-    }
-}, function(reason) {
-    console.log(reason);
-});
+// browser.storage.local.get().then(function(item) {
+//     for (var recipe in item) {
+//         console.log(item[recipe].title);
+//     }
+// }, function(reason) {
+//     console.log(reason);
+// });
