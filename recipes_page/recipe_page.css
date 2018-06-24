@@ -2,6 +2,10 @@ body {
     background: repeat url("/recipes_page/images/bg_pattern.gif")
 }
 
+.grid-sizer {
+    width: 33%;
+}
+
 .recipe-container {
     background-color: #B59065EE;
     border-radius: 3px;
@@ -10,7 +14,7 @@ body {
     margin-bottom: 10px;
     margin-right: 12px;
     padding: 8px;
-    width: 555px;
+    width: 30vw;
 }
 
 .recipe-image-container {

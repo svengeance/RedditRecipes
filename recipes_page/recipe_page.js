@@ -60,8 +60,7 @@ $(function() {
                 createRecipes();
                 setTimeout(() => {
                     $('body').masonry({
-                        itemSelector: '.recipe-container',
-                        columnWidth: 200, 
+                        itemSelector: '.recipe-container'
                     });
                 }, 50);
             });
@@ -78,8 +77,7 @@ $(function() {
             }
     
             $('body').masonry({
-                itemSelector: '.recipe-container',
-                columnWidth: 200,
+                itemSelector: '.recipe-container'
             });
         }, function(reason) {
             console.log(reason);
