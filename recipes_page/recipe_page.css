@@ -16,9 +16,11 @@ body {
 .recipe-image-container {
     display: inline-block;
     height: 120px;
+    max-height: 120px;
 }
 
 .recipe-image {
+    height: 100%;
     position: relative;
 }
 

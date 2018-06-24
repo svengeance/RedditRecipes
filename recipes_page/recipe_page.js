@@ -54,15 +54,16 @@ $(function() {
         }.bind(data));
 
         deleteIcon.click(function(evt) {
-            debugger;
             browser.storage.local.remove(this.key).then(success => {
                 $('body').masonry('destroy');
                 $('.recipe-container').remove();
                 createRecipes();
-                $('body').masonry({
-                    itemSelector: '.recipe-container',
-                    columnWidth: 200, 
-                });
+                setTimeout(() => {
+                    $('body').masonry({
+                        itemSelector: '.recipe-container',
+                        columnWidth: 200, 
+                    });
+                }, 50);
             });
         }.bind({key: data.redditUrl}));
 
