@@ -2,6 +2,7 @@ var baseUrl = `${window.location.protocol}//${window.location.host}`;
 
 var saveElement = document.createElement("li");
 var saveLink = document.createElement("a");
+saveLink.style.cursor = 'pointer';
 saveLink.innerText = "save_recipe";
 
 saveElement.appendChild(saveLink);

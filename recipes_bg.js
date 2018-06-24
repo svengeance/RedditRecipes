@@ -1,5 +1,5 @@
 browser.browserAction.onClicked.addListener(tab => {
     browser.tabs.create({
-        url: "/recipe_page.html"
+        url: "/recipes_page/recipe_page.html"
     });
 });

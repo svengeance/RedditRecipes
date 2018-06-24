@@ -1,24 +1,24 @@
 $(function() {
-    browser.storage.local.get().then(function(item) {
-        for (var recipe in item) {
-            createRecipeElement(item[recipe]);
-        }
+    createRecipes();
 
-        $('body').masonry({
-            itemSelector: '.recipe-container',
-            columnWidth: 200
-        });
-    }, function(reason) {
-        console.log(reason);
+    $('.recipe-backdrop').click(evt => {
+        $(evt.currentTarget).fadeOut();
     });
 
     function createRecipeElement(data) {
+
+        var deleteIcon = $('<img></img>')
+            .addClass('recipe-remove')
+            .attr('src', '/recipes_page/images/delete.svg');
+
         var image = $('<img></img>')
             .addClass('recipe-image')
             .attr('src', data.imageUrl);
 
-        var title = $('<h3></h3>')
+        var title = $('<a></a>')
             .addClass('recipe-title')
+            .attr('href', data.redditUrl)
+            .attr('target', '_blank')
             .text(data.title);
 
         var showText = $('<p></p>')
@@ -28,6 +28,7 @@ $(function() {
         var titleContainer = $('<div></div>')
             .addClass('recipe-title-container')
             .append(title)
+            .append(deleteIcon)
             .append(showText);
 
         var flair = $('<span></span>')
@@ -52,7 +53,36 @@ $(function() {
             showRecipe(this);
         }.bind(data));
 
+        deleteIcon.click(function(evt) {
+            debugger;
+            browser.storage.local.remove(this.key).then(success => {
+                $('body').masonry('destroy');
+                $('.recipe-container').remove();
+                createRecipes();
+                $('body').masonry({
+                    itemSelector: '.recipe-container',
+                    columnWidth: 200, 
+                });
+            });
+        }.bind({key: data.redditUrl}));
+
         document.body.appendChild(jContainer[0]);
+    }
+
+    function createRecipes() {
+        browser.storage.local.get().then(function(item) {
+            for (var recipe in item) {
+                item[recipe]["redditUrl"] = recipe;
+                createRecipeElement(item[recipe]);
+            }
+    
+            $('body').masonry({
+                itemSelector: '.recipe-container',
+                columnWidth: 200,
+            });
+        }, function(reason) {
+            console.log(reason);
+        });        
     }
 
     function getHtml(text) {
@@ -68,8 +98,4 @@ $(function() {
         $('.recipe-modal-body').html(getHtml(data.comment));
         $('.recipe-backdrop').fadeIn();
     }
-
-    $('.recipe-backdrop').click(evt => {
-        $(evt.currentTarget).fadeOut();
-    });
 });
