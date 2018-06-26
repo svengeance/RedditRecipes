@@ -3,21 +3,34 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>The HTML5 Herald</title>
+    <title>Saved Recipes</title>
     <link rel="stylesheet" type="text/css" href="/recipes_page/recipe_page.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link href="/recipes_page/scripts/tagify.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="grid-sizer"></div>
     <div class="recipe-backdrop">
         <div class="recipe-modal">
             <h3 class="recipe-modal-title"></h3>
             <p class="recipe-modal-body"></p>
         </div>
     </div>
+    <div class="header">
+        <div class="search-name">
+            <input type="text" placeholder="Search Titles" />
+        </div>
+        <div class="search-tags">
+            <input name="tags" placeholder="Search Tags" />
+        </div>  
+    </div>
+    <div class="content"></div>
+    <div class="trashcan"></div>
     <script src="/recipes_page/scripts/jquery.min.js"></script>
     <script src="/recipes_page/scripts/mason.js"></script>
     <script src="/recipes_page/recipe_page.js"></script>
+    <script src="/recipes_page/scripts/tagify.min.js"></script>
+    <script src="/recipes_page/scripts/autosize.min.js"></script>
+    <script src="/recipes_page/scripts/fuzzy-search.min.js"></script>
 </body>
 </html>

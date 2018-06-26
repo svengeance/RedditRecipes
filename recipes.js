@@ -40,7 +40,7 @@ document.querySelectorAll("div.entry ul.flat-list").forEach(ele => {
 
 function saveRecipe(title, imageUrl, comment, type, commentsUrl) {
     var saveData = {};
-    saveData[commentsUrl] = { title, imageUrl, comment, type };
+    saveData[commentsUrl] = { title, imageUrl, comment, type, commentsUrl };
     browser.storage.local.set(saveData);
 }
 

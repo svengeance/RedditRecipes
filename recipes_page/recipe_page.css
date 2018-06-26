@@ -1,9 +1,70 @@
 body {
-    background: repeat url("/recipes_page/images/bg_pattern.gif")
+    background: repeat url("/recipes_page/images/bg_pattern.gif");
+    margin: 0px;
 }
 
-.grid-sizer {
-    width: 33%;
+.header {
+    background-color: #B59065EE;
+    box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.75);
+    height: 60px;
+    padding: 8px 16px 0px 16px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.search-name {
+    bottom: 8px;
+    position: absolute;
+    width: 35%;
+}
+
+.search-name input {
+    background: no-repeat url('/recipes_page/images/search.svg');
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    padding-bottom: 12px;
+    padding-left: 30px;
+    width: 100%;
+}
+
+.search-tags {
+    bottom: 8px;
+    left: 40%;
+    position: absolute;
+    width: 30%;
+}
+
+.header .tagify {
+    border-bottom: 1px solid black !important;
+    margin: 0px 0px 0px 8px !important;
+    font-size: 18px;
+}
+
+.tagify {
+    border: none !important;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.tagify--input {
+    padding: 0px 0px 6px 0px !important;
+    margin-left: 0px !important;
+    vertical-align: bottom !important;
+}
+
+tag {   
+    margin: 0px 8px 12px 0px !important;
+}
+
+.header input {
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+}
+
+.content {
+    margin-top: 24px;
+    position: relative;
 }
 
 .recipe-container {
@@ -11,8 +72,7 @@ body {
     border-radius: 3px;
     border: 3px dashed #795124;
     float: left;
-    margin-bottom: 10px;
-    margin-right: 12px;
+    margin: 8px 0px 8px 16px;
     padding: 8px;
     width: 30vw;
 }
@@ -25,6 +85,7 @@ body {
 
 .recipe-image {
     height: 100%;
+    max-width: 160px;
     position: relative;
 }
 
@@ -39,7 +100,7 @@ body {
     height: 100%;
     padding-left: 8px;
     vertical-align: top;
-    width: 60%;
+    width: 65%;
 }
 
 .recipe-remove {
@@ -56,6 +117,12 @@ body {
     vertical-align: top;
 }
 
+.recipe-tags-container {
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding-bottom: 32px;
+}
+
 .recipe-show {
     bottom: 4px;
     color:blue;
@@ -68,6 +135,16 @@ body {
 .recipe-flair {
     display: block;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.recipe-notes {
+    background-color: #D7BA98;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    padding: 4px 8px;
+    resize: none;
+    width: 97%;
 }
 
 .recipe-backdrop {
